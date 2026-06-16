@@ -246,12 +246,12 @@
     }
     /* Image panel — glisse depuis la gauche au survol */
     .card-img {
-      width: 0; min-width: 0; overflow: hidden; flex-shrink: 0;
+      width: 0; min-width: 0; overflow: hidden; flex-shrink: 0; align-self: center;
       transition: width .45s cubic-bezier(.25,.46,.45,.94), min-width .45s cubic-bezier(.25,.46,.45,.94);
     }
     .card:hover .card-img { width: 480px; min-width: 480px; }
     .card-img-inner {
-      width: 480px; height: 100%; min-height: 270px;
+      width: 480px; height: 270px;
       background: rgba(191,0,255,.08);
       border-right: 1px solid rgba(191,0,255,.3);
       display: flex; align-items: center; justify-content: center;
@@ -268,7 +268,16 @@
     }
     .card-img-inner svg { width: 32px; opacity: .4; position: relative; z-index: 1; }
     .card-img-inner > span { position: relative; z-index: 1; }
-    .card-img-inner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .card-img-inner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+    /* Largeur du panneau adaptée au ratio réel de chaque capture, pour éviter le rognage */
+    .projects-grid .card:nth-child(1) .card-img-inner,
+    .projects-grid .card:nth-child(1):hover .card-img { width: 530px; min-width: 530px; }
+    .projects-grid .card:nth-child(2) .card-img-inner,
+    .projects-grid .card:nth-child(2):hover .card-img { width: 332px; min-width: 332px; }
+    .projects-grid .card:nth-child(3) .card-img-inner,
+    .projects-grid .card:nth-child(3):hover .card-img { width: 312px; min-width: 312px; }
+    .projects-grid .card:nth-child(4) .card-img-inner,
+    .projects-grid .card:nth-child(4):hover .card-img { width: 572px; min-width: 572px; }
     /* Contenu de la carte */
     .card-content {
       flex: 1; padding: 1.5rem; min-width: 0;
@@ -416,13 +425,13 @@
         <div class="about-photo">
           <span class="cm">┌</span><span class="cm">┐</span>
           <span class="cm">└</span><span class="cm">┘</span>
-          <img src="moi.png" alt="Naël Lucien Humblot" style="width:100%;height:100%;object-fit:cover;">
+          <img src="photo/moi.png" alt="Naël Lucien HUMBLOT" style="width:100%;height:100%;object-fit:cover;">
         </div>
         <div class="about-text">
           <h2><span>&gt;</span> Qui suis-je ?</h2>
-          <p>Bonjour, je suis <strong>Naël-Lucien Humblot</strong> ! Étudiant en BUT Informatique, je m'épanouis et m'investis pleinement dans le développement d'applications et de services web.</p>
+          <p>Bonjour, je suis <strong>Naël-Lucien HUMBLOT</strong> ! Étudiant en BUT Informatique, je m'épanouis et m'investis pleinement dans le développement d'applications et de services web.</p>
           <p>J'aime autant le Back-End que le Front, de Symfony à JavaScript, en passant par differentes technologies variées.</p>
-          <p>Expérience internationale : stage en Écosse à <strong>Robert Gordon University</strong> (Aberdeen), où j'ai développé un prototype de monde ouvert sur Unity. Quand je ne code pas : musique synthwave et café trop fort.</p>
+          <p>Expérience internationale : stage en Écosse à <strong>Robert Gordon University</strong> (Aberdeen), où j'ai développé un prototype de monde ouvert sur Unity.</p>
           <p class="sig">// SYSTÈME EN LIGNE ◈</p>
         </div>
       </div>
@@ -446,7 +455,7 @@
                 <circle cx="18" cy="19" r="5"/>
                 <path d="M4 36l10-9 8 7 8-10 14 12"/>
               </svg>
-              <span>[ IMAGE ]</span>
+              <img src="photo/arcane.png" alt="projet 1 screenshot" style="width:100%;height:100%;">
             </div>
           </div>
           <div class="card-content">
@@ -467,7 +476,7 @@
                 <circle cx="18" cy="19" r="5"/>
                 <path d="M4 36l10-9 8 7 8-10 14 12"/>
               </svg>
-              <span>[ IMAGE ]</span>
+              <img src="photo/transchlorweb.png" alt="projet 2 screenshot" style="width:100%;height:100%;">
             </div>
           </div>
           <div class="card-content">
@@ -488,7 +497,7 @@
                 <circle cx="18" cy="19" r="5"/>
                 <path d="M4 36l10-9 8 7 8-10 14 12"/>
               </svg>
-              <span>[ IMAGE ]</span>
+              <img src="photo/metier-a-tisser.png" alt="projet 3 screenshot" style="width:100%;height:100%;">
             </div>
           </div>
           <div class="card-content">
@@ -509,7 +518,7 @@
                 <circle cx="18" cy="19" r="5"/>
                 <path d="M4 36l10-9 8 7 8-10 14 12"/>
               </svg>
-              <span>[ IMAGE ]</span>
+              <img src="photo/gasc.png" alt="projet 1 screenshot" style="width:100%;height:100%;">
             </div>
           </div>
           <div class="card-content">
@@ -540,6 +549,10 @@
         <span class="tech-pill">Twig</span>
         <span class="tech-pill">Tailwind</span>
         <span class="tech-pill">Bootstrap</span>
+        <span class="tech-pill">C#</span>
+        <span class="tech-pill">C++</span>
+        <span class="tech-pill">Java</span>
+        <span class="tech-pill">Visual Basic</span>
         <span class="tech-pill">Docker</span>
         <span class="tech-pill">TypeScript</span>
         <span class="tech-pill">JavaScript</span>
@@ -550,8 +563,6 @@
         <span class="tech-pill">Git / GitHub</span>
         <span class="tech-pill">GitLab</span>
         <span class="tech-pill">Unity</span>
-        <span class="tech-pill">C#</span>
-        <span class="tech-pill">Visual Basic</span>
         <span class="tech-pill">Blender 3D</span>
       </div>
     </div>
